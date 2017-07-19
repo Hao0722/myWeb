@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    .a {
+        background: red;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        position: absolute; //定位功能
+    }
+
+</style>
+
+<body>
+
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+    <button type="button" class="btn btn-primary" onclick="shuaxin()">刷新</button>
+
+</body>
+
+
+<script>
+    var clrs = ['red', 'blue', 'green', '#ffooff', 'yellow']; //创建颜色
+
+    function shuaxin() {
+
+        $('body').empty();
+
+        $('body').append('<button type="button" class="btn btn-primary" onclick="shuaxin()">刷新</button>');
+
+        for (var i = 0; i < 50; i++) {
+
+            var a = $('<div class="a"></div>'); //创建变量
+
+            var size = Math.random() * 100; //随机变大小
+
+            a.css('width', size + 'px');
+            a.css('height', size + 'px'); //大小随机变换
+
+            a.css('left', Math.random() * 400 + 'px');
+            a.css('top', Math.random() * 400 + 'px'); //位置随机变换
+
+            //a.css('left',100+50*Math.sin(i)+'px');
+            //a.css('top',30*i+'px');
+
+            a.css('opacity', Math.random()); //透明随机变换
+
+            a.css('background', clrs[Math.floor(Math.random() * 5)]); //颜色随机变换
+
+            $('body').append(a); //在body里添加一个东西
+
+
+
+        }
+
+
+    }
+
+</script>
+
+</html>
